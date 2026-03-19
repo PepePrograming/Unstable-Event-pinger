@@ -19,6 +19,11 @@ Setup a python discord bot that pings on Unstable Universe voice and message eve
    `'voiceRole': 0,` - replace 0 with a role ID - voicechat pings <br />
 3. Just launch the bot after saving
 
+## Important
+Using this bot can get your discord account banned for breaking Discords TOS - recommended to use an alt. Sharing the discord token can lead to ur account being hacked and sharing your discord webhook can lead to your server getting nuked.
+
+Use at your own risk
+
 ## Help
 1. [Get discord token](https://www.youtube.com/watch?v=LnBnm_tZlyU)
 2. [Create discord webhook](https://www.youtube.com/watch?v=xXPnUGrQpBY)

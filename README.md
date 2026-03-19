@@ -11,8 +11,8 @@ Setup a python discord bot that pings on Unstable Universe voice and message eve
 1. too lazy - ask AI or smth lol
 
 ## Bot setup
-1. open any file editor and modify the
-   
+1. If not done download [main.py](https://github.com/PepePrograming/Unstable-Event-pinger/blob/main/main.py)
+2. open any file editor and modify the
    `TOKEN = 'and replace this with a discord user token'` - DON'T share with anyone <br />
    `'webhook': 'and replace this with a discord webhook link'` - DON'T share with anyone <br />
    `'messageRole': 0,` - replace 0 with a role ID - message pings <br />

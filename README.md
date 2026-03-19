@@ -20,7 +20,7 @@ Setup a python discord bot that pings on Unstable Universe voice and message eve
 3. Just launch the bot after saving
 
 ##
-If you have further questions feel free to ask in the discord server:
+If you have further questions feel free to ask in the discord server:<br />
    https://discord.gg/FmWqWd78aK
 
 ## Help

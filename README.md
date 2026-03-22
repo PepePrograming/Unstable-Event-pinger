@@ -5,7 +5,7 @@ Setup a python discord bot that pings on Unstable Universe voice and message eve
 
 ### Windows:
 1. open cmd and run `winget install -e --id Python.Python.3.11`  | download [Python](https://www.python.org/downloads/)
-2. run `pip install discord.py aiohttp`                          | download dependencies
+2. also run `python -m pip install discord.py-self aiohttp`      | download dependencies
 
 ### Linux:
 1. too lazy - ask AI or smth lol

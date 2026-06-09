@@ -25,6 +25,9 @@ Using this bot can get your discord account banned for breaking [Discords TOS](h
 
 Use at your own risk
 
+## License:
+   This project is licensed with GPL-3.0, also view license.md
+
 ## Help
 1. [Get discord token](https://www.youtube.com/watch?v=LnBnm_tZlyU)
 2. [Create discord webhook](https://www.youtube.com/watch?v=xXPnUGrQpBY)

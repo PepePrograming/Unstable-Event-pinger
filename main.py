@@ -2,15 +2,10 @@ import discord
 from discord import Webhook, File
 import asyncio
 import aiohttp
-import json
-# ───────────────────────────────────────────────────────
-#  WARNING: This is a self bot which violates discord TOS
-# ───────────────────────────────────────────────────────
-TOKEN = '' # put in your discord token
+TOKEN = ''
 
-# Default config
 config = {
-    'webhook': '', # put in your discord webhook link
+    'webhook': '',
 
     'messagePing': True,
     'voicePing': True,
@@ -18,8 +13,8 @@ config = {
     'voiceRole': 0,
 
     'server1': 1382494449934008433,
-    'voiceRoleServer1': ["1382496063448940606","1382496298535751782"], # multi role support - e.g. ["1", "2"]
-    'announceChannel': [1382502803058196612], # multi channel support - e.g. [1, 2]
+    'voiceRoleServer1': ["1382496063448940606","1382496298535751782"],
+    'announceChannel': [1382502803058196612],
 }
 
 client = discord.Client()
@@ -34,7 +29,6 @@ async def on_message(message: discord.Message):
     if message.author == client.user:
         return
 
-    # Forward announcement
     if (config.get('messagePing', False)
             and message.guild
             and message.guild.id == config['server1']
@@ -42,7 +36,7 @@ async def on_message(message: discord.Message):
             and config.get('webhook')):
 
         content = (
-            f"<@&{config['messageRole']}> channel name: __**{message.channel.name}**__ - <#{message.channel.id}>\n"
+            f"<@&{config['messageRole']}> channel name: **{message.channel.name}** - <#{message.channel.id}>\n"
             f"{message.content}"
         )
         async with aiohttp.ClientSession() as session:
@@ -54,7 +48,7 @@ async def on_message(message: discord.Message):
                     avatar_url=message.author.avatar.url if message.author.avatar else None
                 )
             except Exception as e:
-                print(f"message ping failed: {e}")
+                print(f"message ping failed")
 
 @client.event
 async def on_voice_state_update(member: discord.Member, before, after):
@@ -65,7 +59,6 @@ async def on_voice_state_update(member: discord.Member, before, after):
     if before.channel is not None or after.channel is None:
         return
 
-    # Support multiple role IDs
     watched = [int(rid) for rid in config['voiceRoleServer1'] if str(rid).strip().isdigit()]
 
     if not any(role.id in watched for role in member.roles):
@@ -77,7 +70,7 @@ async def on_voice_state_update(member: discord.Member, before, after):
     link = f"https://discord.com/channels/{member.guild.id}/{after.channel.id}"
     content = (
         f"<@&{config['voiceRole']}>\n"
-        f"channel name: __**{after.channel.name}**__ - {link}"
+        f"channel name: **{after.channel.name}** - {link}"
     )
 
     async with aiohttp.ClientSession() as session:
@@ -89,6 +82,6 @@ async def on_voice_state_update(member: discord.Member, before, after):
                 avatar_url=member.avatar.url if member.avatar else None
             )
         except Exception as e:
-            print(f"voice ping failed: {e}")
+            print(f"voice ping failed")
 
 client.run(TOKEN)

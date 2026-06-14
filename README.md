@@ -12,7 +12,7 @@ Setup a python discord bot that pings on Unstable Universe voice and message eve
 
 ## Bot setup
 1. If not done download [main.py](main.py)
-2. open any file editor and modify the
+2. open any file editor and modify the<br />
    `TOKEN = 'and replace this with a discord user token'`<br />
    `'webhook': 'and replace this with a discord webhook link'`
 3. Make sure your account has joined the required discord server
@@ -29,5 +29,4 @@ Use at your own risk
    If you use this bot publicly please make a discord invite link easy accessible that leads to the server
    
 ##
-If you have further questions feel free to ask in the discord server:
-   https://discord.gg/FmWqWd78aK
+If you have further questions feel free to ask in the discord server:<br />https://discord.gg/FmWqWd78aK
